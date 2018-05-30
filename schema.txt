@@ -1,0 +1,39 @@
+STOPPING CONDITION
+- how can we have a terminating condition that is non global?
+
+WHAT VALUES ARE TRACKED
+- number of load activity. should we care about the amount of load
+transfered from a unit to its neigbors? or should we just think of 
+it a YES/NO transfered
+- number of cycles
+
+DETERMINING IF LOAD SHOULD BE TRANSFERED FROM G TO A OR B
+- compute the average load between A,B,G
+- IF G has excess load over the average and B or A 
+has insufficient load, transfer as much load as possible from G
+so that, 1) G still has greater than or equal to average load
+2) the unit with insufficient load has less than or equal to average load
+
+SCHEDULING LOAD BALANCING
+- initially each proccesser is randomly assigned a cycyle
+- global cycle count initialized to 1
+- repeat
+    - sort the list of processors by their appointment time
+    - take the difference between the proccessor with 1st appointment 
+      and the global count, d, and add d to global counter
+    - if the unit in question can distribute load, do it and update load activity counter
+    - otherwise schedule the next appointment for that unit. 
+    - make sure list is ordered correctly from nearest appointment times to highest
+
+
+GENERATE RESULTS GRAPH
+- constants are 
+- as we vary the number of proccesors what happens to load balancing activity rate?
+- what happens to the number of cycles required? 
+- k = {5,10,100,1000}
+- load between [10,1000]
+- load activity between [100,1000]
+
+
+
+
