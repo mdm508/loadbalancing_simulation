@@ -11,4 +11,11 @@ todo: graph stuff in c++ (or is better to use another program)
 todo: formalize what the input to write is
 */
 
+#ifndef WRITE_HPP
+#define WRITE_HPP
 
+
+
+
+
+#endif //WRITE_HPP

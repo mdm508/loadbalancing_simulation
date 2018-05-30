@@ -1,4 +1,25 @@
-//Unit.hp
-//This file defins the unit object
+//Unit.hpp
+#ifndef UNIT_HPP
+#define UNIT_HPP
 
-//Todo: implement the unit object
+class Unit{
+    private:
+        int appointment;
+        int load;
+        Unit* prev;
+        Unit* next;
+    public:
+        Unit(Unit* prev,Unit* next);
+        Unit();
+        //getters
+        int getAppointment() const;
+        int getLoad() const;
+        Unit* getPrev() ;
+        Unit* getNext();
+        //setters
+        void scheduleAppointment();
+        void setLoad(int load);
+        void setPrev(Unit* prev);
+        void setNext(Unit* next);
+};
+#endif //UNIT_HPP
