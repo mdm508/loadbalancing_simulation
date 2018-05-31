@@ -11,6 +11,7 @@ class Unit{
     public:
         Unit(Unit* prev,Unit* next);
         Unit();
+        Unit(Unit prev, Unit next);
         //getters
         int getAppointment() const;
         int getLoad() const;
@@ -19,7 +20,9 @@ class Unit{
         //setters
         void scheduleAppointment();
         void setLoad(int load);
-        void setPrev(Unit* prev);
-        void setNext(Unit* next);
+
+        //? Not sure if these two are needed
+        //void setPrev(Unit* prev);
+        //void setNext(Unit* next);
 };
 #endif //UNIT_HPP
