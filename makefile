@@ -12,16 +12,16 @@ all: $(TARGET)
 $(TARGET): $(OBJFILES)
 	$(CC) $(OBJFILES) -o $(TARGET)
 
-main.o:
+main.o: main.cpp
 	$(CC) $(CFLAGS) main.cpp
 
-UnitList.o: 
+UnitList.o: UnitList.cpp
 	$(CC) $(CFLAGS) UnitList.cpp 
 
-Unit.o:
+Unit.o: Unit.cpp
 	$(CC) $(CFLAGS) Unit.cpp
 
-Write.o:
+Write.o: Write.cpp
 	$(CC) $(CFLAGS) Write.cpp
 
 clean:

@@ -8,16 +8,14 @@ todo: write the mainloop
 #include "UnitList.hpp"
 #include "Write.hpp"
 #include <iostream>
-
-
-
-
+using namespace std;
 
 
 int main(){
-    Unit u2 = Unit();
-    Unit u3 = Unit();
-    Unit u1 = Unit();
-    std::cout << u3.getLoad() << std::endl;
+    UnitList list = UnitList(4);
+    list.printRing();
+    cout << endl << endl;
+    list.printSchedule();
     return 0;
+
 }

@@ -13,30 +13,26 @@ std::mt19937 genL(rdL());
 std::uniform_int_distribution<int> time_dis(100, 1000);
 std::uniform_int_distribution<int> load_dis(10,1000);
 
+//initialize static member
+int Unit::classId = 0;
 
-Unit::Unit(Unit* prev,Unit* next)
-: prev(prev), next(next) 
+Unit::Unit(Unit* predecessor)
+: predecessor(predecessor), successor(0)
 {
-    //initialze load to a random number in
-    //the interval [10,1000]
+
+    this->id = ++ Unit::classId;
     this->load = load_dis(genL);
     scheduleAppointment();
 }
 
 Unit::Unit()
+: predecessor(0), successor(0)
 {
-    this->prev = 0;
-    this->next = 0; 
-    this->load = load_dis(genL);
-}
-
-
-Unit::Unit(Unit prev, next)
-: prev(prev), next(next)
-{
+    this->id = ++ Unit::classId;
     this->load = load_dis(genL);
     scheduleAppointment();
 }
+
 
 
 //getters
@@ -46,6 +42,10 @@ int Unit::getAppointment() const {
 
 int Unit::getLoad() const {
     return this->load;
+}
+
+int Unit::getId() const{
+    return this->id;
 }
 
 //setters
@@ -60,10 +60,3 @@ void Unit::setLoad(int load){
 }
 
 
-/*
-?: do we need this
-void Unit::setPrev(Unit* prev){
-}
-void Unit::setNext(Unit* next){
-}
-*/

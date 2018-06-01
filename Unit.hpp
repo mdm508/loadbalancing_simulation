@@ -6,23 +6,32 @@ class Unit{
     private:
         int appointment;
         int load;
+        int id;
+    public:
+        static int classId;
+        // maintains ordering of schedule
         Unit* prev;
         Unit* next;
-    public:
-        Unit(Unit* prev,Unit* next);
+        // will be needed by UnitList
+        // maintains neigbors
+        Unit* predecessor;
+        Unit* successor;
+
+        Unit(Unit* predecessor);
         Unit();
-        Unit(Unit prev, Unit next);
         //getters
         int getAppointment() const;
         int getLoad() const;
         Unit* getPrev() ;
         Unit* getNext();
+        int getId() const;
         //setters
         void scheduleAppointment();
         void setLoad(int load);
 
-        //? Not sure if these two are needed
-        //void setPrev(Unit* prev);
-        //void setNext(Unit* next);
+    
+
 };
+
+
 #endif //UNIT_HPP
